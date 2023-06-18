@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - entry point
- * Description: 'print numbers of base 10'
+ * Description: 'print alphabets in reverse'
  * Return: Always 0
  */
 int main(void)
