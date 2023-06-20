@@ -1,10 +1,10 @@
 #include "main.h"
+
 /**
  * main - print the alphabets in lowercase
- *
- * is written by mbah
  */
-void print_alphabet(void);
+
+void print_alphabet(void)
 {
 	int i;
 
