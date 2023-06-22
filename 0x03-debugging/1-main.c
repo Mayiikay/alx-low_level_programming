@@ -17,8 +17,3 @@ int main(void)
 	Printf("Infinite loop avoided! \\o/\n");
 	return (0);
 }
-
-Qn: 2
-
-
-
