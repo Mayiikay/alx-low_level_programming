@@ -18,7 +18,7 @@ char *cap_string(char *s)
 		{
 			if (i == 0)
 			{
-				*(s + i) = *(s + i) - 3
+				*(s + i) = *(s + i) - 32;
 			}
 			else
 			{
