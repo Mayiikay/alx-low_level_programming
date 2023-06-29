@@ -8,7 +8,7 @@
 void reverse_array(int *a, int n)
 {
 	int swap, begin, end;
-	
+
 	begin = 0;
 	end = n - 1;
 	while (begin < end)
