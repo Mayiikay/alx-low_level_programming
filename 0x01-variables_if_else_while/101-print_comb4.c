@@ -1,34 +1,38 @@
+/*
+ * File: 0-positive_or_negative.c
+ * Auth: Lahcen Oubbaih
+ */
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
 /**
- *Main - prints all possible different combinations of three digits
- *Return: Always 0 (success)
+ * main - print the last digit of the number stored in the variable n
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	int n, m, l;
+	int digit1, digit2, digit3;
 
-	for (n = '0'; n <= '9'; n++)
+	for (digit1 = 0; digit1 < 8; digit1++)
 	{
-		for (m = n + 1; m <= '9'; m++)
+		for (digit2 = digit1 + 1; digit2 < 9; digit2++)
 		{
-			for (l = m + 1; l <= '9'; l++)
+			for (digit3 = digit2 + 1; digit3 < 10; digit3++)
 			{
-				if ((m != n) != l)
-				{
-					putchar(n);
-					putchar(m);
-					putchar(l);
-					if (n == '7' && m == '8')
-						continue;
-						putchar(',');
-						putchar(' ');
-				}
+				putchar((digit1 % 10) + '0');
+				putchar((digit2 % 10) + '0');
+				putchar((digit3 % 10) + '0');
+
+				if (digit1 == 7 && digit2 == 8 && digit3 == 9)
+
+					continue;
+
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
+
 	putchar('\n');
+
 	return (0);
 }

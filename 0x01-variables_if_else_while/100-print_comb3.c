@@ -1,27 +1,33 @@
+/*
+ * File: 100-print_comb3.c
+ * Auth: Lahcen Oubbaih
+ */
 #include <stdio.h>
-
 /**
- *Main - prints all possible different combinations of two digits
- *Return: Always 0 (success)
+ * main - prints all possible different combinations of two digits.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	int n;
-	int m;
+	int digit1, digit2;
 
-	for (n = 48; n <= 56; n++)
+	for (digit1 = 0; digit1 < 9; digit1++)
 	{
-		putchar(n);
-	}
-	for (m = 49; m <= 57; m++
-			if (m > n)
-			{
-			putchar(m);
-			if (n != 56 || m != 57)
-			}
+		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
+		{
+			putchar((digit1 % 10) + '0');
+			putchar((digit2 % 10) + '0');
+
+			if (digit1 == 8 && digit2 == 9)
+				continue;
+
 			putchar(',');
 			putchar(' ');
-			}
-			putchar('\n');
-			return (0);
+		}
+	}
+
+	putchar('\n');
+
+	return (0);
 }

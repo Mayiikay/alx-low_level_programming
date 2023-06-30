@@ -1,23 +1,27 @@
+/*
+ * File: 9-print_comb.c
+ * Auth: Lahcen Oubbaih
+ */
 #include <stdio.h>
 /**
- *main - entry point
- *Description: 'print numbers of base 10'
- *Return: Always 0
+ * main - prints all possible combinations of single-digit numbers
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	int n;
-	
-	for (n = 48; n <= 57; n++)
+	int num;
+
+	for (num = 0; num <= 9; num++)
 	{
-		putchar(n);
-		if (n == 57)
-		{
+		putchar((num % 10) + '0');
+		if (num == 9)
 			continue;
-		}
+
 		putchar(',');
 		putchar(' ');
 	}
 	putchar('\n');
+
 	return (0);
 }
