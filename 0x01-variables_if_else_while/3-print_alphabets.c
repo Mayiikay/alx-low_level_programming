@@ -1,24 +1,25 @@
+/*
+ * File: 3-print_alphabets.c
+ * Auth: Lahcen Oubbaih
+ */
 #include <stdio.h>
 /**
- *main - entry point
- *Description: 'print alphabets lowercase and uppercase'
- *Return: Always 0
+ * main - prints the alphabet in lowercase, and then in uppercase.
+ *
+ * Return: Always 0.
  */
+
 int main(void)
 {
-	int n = 97;
-	int m = 65;
+	char letter;
 
-	while (n <= 122)
-	{
-		putchar(n);
-		n++;
-	}
-	while (n <= 90)
-	{
-		putchar(m);
-		m++;
-	}
+	for (letter = 'a' ; letter <= 'z' ; letter++)
+		putchar(letter);
+
+	for (letter = 'A' ; letter <= 'Z' ; letter++)
+		putchar(letter);
+
 	putchar('\n');
+
 	return (0);
 }
