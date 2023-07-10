@@ -1,52 +1,46 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
-
+#include <string.h>
 /**
- * str_concat - A function that concatenates two strings
- * @s1: An input pointer of the first string
- * @s2: An input pointer of the second string
- * Return: Apointer to concatened strings or NULL if it str is NULL
+ * str_concat - concatenates two strings.
+ * @s1: array refrance - left
+ * @s2: array refrance - right
+ * Return: array refrance full string
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *new_str, *starts1, *starts2;
-	int i = 0, lens1 = 0, lens2 = 0;
+	int len, i, j;
+	char *arr;
 
-	starts1 = s1;
-	starts2 = s2;
-	if (s1 == NULL)
-		s1 = "";
-	while (*s1)
+	if ((s1 == NULL) && (s2 == NULL))
 	{
-		lens1++;
-		s1++;
+		len = 1;
 	}
-	s1 = starts1;
-	if (s2 == NULL)
-		s2 = "";
-	while (*s2)
-	{
-		lens2++;
-		s2++;
-	}
-	s2 = starts2;
-	new_str = malloc(sizeof(char) * (lens1 + lens2 + 1));
-	starts1 = new_str;
-	if (new_str == NULL)
+	else if (s1 == NULL)
+		len = strlen(s2) + 1;
+	else if (s2 == NULL)
+		len = strlen(s1) + 1;
+	else
+		len = ((strlen(s1) + 1) + (strlen(s1) + 1));
+	arr = malloc(len);
+	if (arr == NULL)
 		return (NULL);
-	for (; i < (lens1 + lens2); i++)
+
+	if ((s1 == NULL) && (s2 == NULL))
+		arr[0] = '\0';
+	else if (s1 == NULL)
+		for (i = 0; i < len; i++)
+			arr[i] = s2[i];
+	else if (s2 == NULL)
+		for (i = 0; i < len; i++)
+			arr[i] = s1[i];
+	else
 	{
-		if (i < lens1)
-		{
-			new_str[i] = *s1;
-			s1++;
-		}
-		else
-		{
-			new_str[i] = *s2;
-			s2++;
-		}
+		for (i = 0; s1[i] != '\0'; i++)
+			arr[i] = s1[i];
+		for (j = 0; s2[j] != '\0'; j++, i++)
+			arr[i] = s2[j];
 	}
-	new_str[i] = '\0';
-	return (starts1);
+
+	return (arr);
 }
