@@ -1,9 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 /**
- * File: main - Entry point
+ * File: main
  *
- * Return: 0
+ * Desc: header file
  */
 int _putchar(char c);
 void *malloc_checked(unsigned int b);
